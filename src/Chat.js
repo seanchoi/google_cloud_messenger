@@ -9,6 +9,7 @@ import Message from './Message'
 import firebase from 'firebase';
 import { selectUser } from './features/userSlice';
 import FlipMove from "react-flip-move"
+import $ from "jquery"
 
 function Chat() {
     const user = useSelector(selectUser);
@@ -47,6 +48,14 @@ function Chat() {
 
         setInput("");
     };
+    function getMessages(letter) {
+        var div = $(".chat__messages");
+        div.scrollTop(div.prop('scrollHeight'));
+      }
+    
+      $(function() {
+          getMessages();
+      });
     return (
         <div className="chat">            
             <div className="chat__header">
@@ -55,7 +64,7 @@ function Chat() {
             </div>
             {/* chat messages */}
             <div className="chat__messages">
-                
+
                 <FlipMove>
                     {messages.map(({id, data}) => (
                         <Message key={id} contents={data} />

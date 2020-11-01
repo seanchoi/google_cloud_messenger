@@ -1,17 +1,18 @@
 .login {
     display: grid;
     place-items: center;
-    height:100vh;
+    height:80vh;
     width:100%;
 }
 .login > div > img {
     object-fit: contain;
-    height:150px;
+    height:250px;
+    margin-bottom: 15px;
 }
 .login__logo {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column;    
 }
 .login > button {
     width: 300px;
